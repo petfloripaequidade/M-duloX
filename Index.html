@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo X - Raça e Etnia - PET1</title>
+    <style>
+        /* IDENTIDADE VISUAL ATUALIZADA: AZUL CLARO E AZUL MÉDIO */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: #f5f8fa; color: #1a242a; scroll-behavior: smooth; }
+        
+        .banner-logos { background: white; padding: 25px; text-align: center; border-bottom: 1px solid #eee; }
+        .banner-logos img { width: 100%; max-width: 1100px; border-radius: 12px; }
+
+        .hero { 
+            background: linear-gradient(135deg, #81A6C6 0%, #AACDDC 100%);
+            color: white; padding: 100px 20px; text-align: center;
+            display: flex; flex-direction: column; align-items: center; min-height: 60vh;
+        }
+        .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.1; }
+        .mod-pill { 
+            background: white; color: #81A6C6; display: inline-block; 
+            padding: 10px 40px; border-radius: 12px; font-weight: 900; 
+            font-size: 24px; margin: 25px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        nav { 
+            background: white; position: sticky; top: 0; z-index: 1000; 
+            border-bottom: 4px solid #81A6C6; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        nav ul { display: flex; justify-content: center; list-style: none; padding: 15px 0; flex-wrap: wrap; gap: 10px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 700; font-size: 12px; padding: 8px 15px; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: #81A6C6; }
+
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 40px; padding: 50px; margin-bottom: 50px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .section-title { font-size: 32px; color: #AACDDC; margin-bottom: 5px; border-bottom: 6px solid #81A6C6; display: inline-block; }
+        .section-subtitle { font-size: 18px; color: #555; font-style: italic; margin-bottom: 25px; display: block; font-weight: 500; }
+        
+        .video-box { width: 100%; aspect-ratio: 16/9; border-radius: 30px; overflow: hidden; background: #000; }
+        .img-full { width: 100%; max-width: 800px; border-radius: 20px; display: block; margin: 20px auto; }
+        
+        .btn-action { background: #81A6C6; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn-action:hover { background: #AACDDC; transform: scale(1.05); }
+        .btn-aval { background: #AACDDC; width: 100%; text-align: center; font-size: 20px; margin-top: 15px; }
+
+        .podcast-row { display: flex; gap: 30px; align-items: stretch; flex-wrap: wrap; margin-top: 20px; }
+        .audio-card { background: #f7f9fb; border: 2px solid #e1e9f0; border-radius: 40px; padding: 40px; flex: 1.5; min-width: 300px; }
+
+        .flip-card { flex: 1; min-width: 300px; height: 350px; perspective: 1000px; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-front, .flip-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; }
+        .flip-front { background: linear-gradient(135deg, #81A6C6 0%, #AACDDC 100%); color: white; }
+        .flip-back { background: #ffffff; color: #AACDDC; border: 6px solid #81A6C6; transform: rotateY(180deg); }
+
+        .ref-item { border-left: 4px solid #81A6C6; padding-left: 15px; margin-bottom: 15px; font-size: 15px; line-height: 1.6; }
+        .creditos-list { list-style: none; margin-top: 20px; font-size: 17px; line-height: 1.8; }
+        footer { background: #1a242a; color: white; padding: 60px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="banner-logos">
+        <img src="https://drive.google.com/thumbnail?id=1QOIXz4Wz_mh7SOvM4KU6Jy7LJb3I3f3o&sz=w1200" alt="Logos Institucionais">
+    </div>
+
+    <header class="hero">
+        <h1>Raça e Etnia - fundamentos para Servidores.</h1>
+        <div class="mod-pill">MÓDULO X</div>
+        <p style="font-size: 20px; font-weight: 600;">Justiça Social e o Reconhecimento das Diferenças no Cuidado</p>
+    </header>
+
+    <nav aria-label="Navegação Principal">
+        <ul>
+            <li><a href="#boas-vindas">Boas-vindas</a></li>
+            <li><a href="#video-aula">Vídeo Aula</a></li>
+            <li><a href="#mapa-mental">Mapa Mental</a></li>
+            <li><a href="#infografico">Infográfico</a></li>
+            <li><a href="#podcast">Podcast</a></li>
+            <li><a href="#avaliacao">Avaliação Final</a></li>
+            <li><a href="#referencias">Referências Bibliográficas</a></li>
+            <li><a href="#creditos">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <section id="boas-vindas" class="card" style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 class="section-title">Boas-vindas!</h2>
+                <p style="font-size: 18px; line-height: 1.8; margin-top: 20px;">
+                    Neste primeiro módulo, discutimos o impacto dos determinantes sociais na Atenção Primária do SUS, focando na construção de currículos antirracistas e no letramento racial[cite: 1, 2]. Vamos explorar como a formação sócio-histórica do Brasil e o racismo estrutural moldam o processo saúde-doença, capacitando servidores e docentes para uma prática comprometida com a justiça social e a equidade[cite: 1, 2, 81].
+                </p>
+                <div style="background: #f0f4f7; padding: 20px; border-radius: 15px; margin-top: 20px; border-left: 5px solid #81A6C6;">
+                    <p style="font-size: 14px; color: #4a6a8a;"><strong>Dica:</strong> Recomendamos o uso de fones de ouvido para os recursos multimídia.</p>
+                </div>
+            </div>
+            <img src="https://drive.google.com/thumbnail?id=1FqW1XmOu-95XlN9K5xDs3ArW1FKUcIo4&sz=w1000" style="width: 100%; max-width: 400px; border-radius: 30px;" alt="Acolhimento">
+        </section>
+
+        <section id="video-aula" class="card" style="text-align: center;">
+            <h2 class="section-title">Vídeo Aula</h2>
+            <span class="section-subtitle">A fundamentação bioética da equidade como princípio reitor do SUS.</span>
+            <div class="video-box">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zvqk2Fby4vo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="mapa-mental" class="card" style="text-align: center;">
+            <h2 class="section-title">Mapa Mental</h2>
+            <span class="section-subtitle">Uma síntese visual dos eixos de universalidade e cuidado.</span>
+            <a href="https://drive.google.com/file/d/1oJeX-1pjGzNIxwnHBaNiNrRLYMhMaP4G/view?usp=sharing" target="_blank">
+                <img src="https://drive.google.com/thumbnail?id=1oJeX-1pjGzNIxwnHBaNiNrRLYMhMaP4G&sz=w1200" class="img-full" alt="Mapa Mental">
+            </a>
+        </section>
+
+        <section id="infografico" class="card" style="text-align: center;">
+            <h2 class="section-title">Infográfico</h2>
+            <span class="section-subtitle">O fluxo da equidade na prática: do acolhimento à escuta qualificada.</span>
+            <a href="https://drive.google.com/file/d/1eTuh10f4nc8JohQDKYmGCPo-jfVnM9QY/view?usp=sharing" target="_blank">
+                <img src="https://drive.google.com/thumbnail?id=1eTuh10f4nc8JohQDKYmGCPo-jfVnM9QY&sz=w1200" class="img-full" alt="Infográfico">
+            </a>
+        </section>
+
+        <section id="podcast" class="card">
+            <div class="podcast-row">
+                <div class="audio-card">
+                    <h2 class="section-title">Podcast</h2>
+                    <p style="margin: 20px 0; font-size: 16px; line-height: 1.6;">
+                        Ouça a análise do caso clínico "Raça e Etnia" e como ele se aplica ao nosso território.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1G4ET2ZMAITARGd-RUGHlY722ga3PkAzI/view?usp=sharing" target="_blank" class="btn-action">OUVIR NO DRIVE ▶</a>
+                </div>
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-front">
+                            <h3>Reflexão 1</h3>
+                            <p style="margin-top: 15px; font-style: italic;">"A raça é o principal marcador de exclusão social no Brasil; as desigualdades não são aleatórias, são um projeto histórico." [cite: 48]</p>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Reflexão 2</h3>
+                            <p style="margin-top: 15px; font-style: italic;">"Pessoas pretas têm maior risco de adoecer por causas evitáveis devido às condições de vulnerabilidade impostas pelo racismo." [cite: 77, 78]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="avaliacao" class="card" style="text-align: center; border: 3px dashed #81A6C6;">
+            <h2 class="section-title">Avaliação Final</h2>
+            <p style="margin-top: 10px; font-size: 20px; font-weight: 600; color: #81A6C6;">Venha testar seu aprendizado!</p>
+            <a href="https://forms.gle/qaNwBqfLj83RyZvr9" target="_blank" class="btn-action btn-aval">ACESSAR FORMULÁRIO 📝</a>
+        </section>
+
+        <section id="referencias" class="card">
+            <h2 class="section-title">Referências Bibliográficas</h2>
+            <div style="margin-top: 25px;">
+                <p class="ref-item">1. BRASIL. Ministério da Saúde. Política Nacional de Saúde Integral da População Negra: uma política para o SUS. 3. ed. Brasília: Ministério da Saúde, 2017.</p>
+                <p class="ref-item">2. IBGE – Instituto Brasileiro de Geografia e Estatística. Desigualdades sociais por cor ou raça no Brasil. Rio de Janeiro: IBGE, 2019.</p>
+                <p class="ref-item">3. LOPES, Fernanda. Para além da barreira dos números: desigualdades raciais e saúde. Cadernos de Saúde Pública, Rio de Janeiro, v. 21, n. 5, p. 1595–1601, 2005.</p>
+                <p class="ref-item">4. BATISTA, Luís Eduardo; MONTEIRO, Rosana; MEDEIROS, Rodrigo. Iniquidades raciais e saúde: o ciclo da política de saúde da população negra. Saúde e Sociedade, São Paulo, v. 22, n. 3, p. 681–690, 2013.</p>
+                <p class="ref-item">5. VAINFAS, Ronaldo. Colonização, miscigenação e questão racial: notas sobre equívocos e tabus da historiografia brasileira. Universidade Federal Fluminense, tempo, n. 8, p. 1-12, ago. 1999.</p>
+                <p class="ref-item">6. BRASIL. Senado Federal. Manual quesito cor/raça e etnia do Senado Federal. Brasília: Senado Federal, 2023.</p>
+                <p class="ref-item">7. MUNANGA, Kabengele. Uma abordagem conceitual das noções de raça, racismo, identidade e etnia. Niterói: EDUFF, 2004.</p>
+                <p class="ref-item">8. BENTO, Maria Aparecida Silva. Branqueamento e branquitude no Brasil. In: Psicologia social do racismo. 2. ed. Petrópolis, RJ: Vozes, 2003.</p>
+                
+                <p class="ref-item" style="color: #666; font-size: 13px; border-left: 4px solid #AACDDC;"><strong>9. Nota de Transparência:</strong> Este material contou com o suporte da IA Gemini para estruturação de código e design.</p>
+            </div>
+        </section>
+
+        <section id="creditos" class="card">
+            <h2 class="section-title">Créditos</h2>
+            <ul class="creditos-list">
+                <li><strong>Organização:</strong> Isabella Veroneze de Oliveira Azevedo, Cauane Ferrrazzo Rauschkolb e outros.</li>
+                <li><strong>Curso:</strong> Variados / UFSC</li>
+                <li><strong>Realização:</strong> Grupo PET 1</li>
+                <li><strong>Parceria:</strong> UFSC, UDESC e Prefeitura Municipal de Florianópolis/SC</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Prefeitura de Florianópolis | PET1 Administração - UFSC</p>
+    </footer>
+</body>
+</html>
